@@ -3,24 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reitz Aplicativos</title>
+    <title>Reitz Aplicativos Ltda</title>
+    <meta name="description" content="Desenvolvimento de aplicativos focados em produtividade, educação e utilitários.">
+    
+    <!-- Fonte do Google (Inter) para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Variáveis de Cores */
+        :root {
+            --primary: #0056b3;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --apple-color: #000000;
+            --play-color: #01875f;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Hero Section */
+        header {
+            background-color: var(--card-bg);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Seção de Aplicativos */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-main);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            border: 1px solid #f0f0f0;
         }
-        h1 { color: #0056b3; }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .app-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .app-buttons {
+            margin-top: auto; /* Empurra os botões para o fundo do card */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-apple {
+            background-color: var(--apple-color);
+            color: white;
+        }
+
+        .btn-google {
+            background-color: var(--play-color);
+            color: white;
+        }
+
+        /* Rodapé e Contato */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-legal {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>O site da Reitz Aplicativos Ltda está em construção.</p>
+
+    <header>
+        <h1>REITZ APLICATIVOS LTDA</h1>
+        <p>Desenvolvimento de soluções digitais, ferramentas de produtividade e aplicativos educacionais.</p>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Nosso Portfólio</h2>
+        
+        <div class="apps-grid">
+            
+            <!-- App 1 -->
+            <div class="app-card">
+                <div class="app-title">Caderno de Anotações por Matérias</div>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/br/app/caderno-anota%C3%A7%C3%B5es-por-mat%C3%A9rias/id6451050103" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetocadernodesenhado" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                </div>
+            </div>
+
+            <!-- App 2 -->
+            <div class="app-card">
+                <div class="app-title">Criar Escala de Revezamento</div>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/br/app/criar-escala-de-revezamento/id6451197630" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoescalarevezamento&hl=pt" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                </div>
+            </div>
+
+            <!-- App 3 -->
+            <div class="app-card">
+                <div class="app-title">Eu Escritor - Escrever Livros</div>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/br/app/eu-escritor-escrever-livros/id6743714263" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoescreverlivro&hl=pt" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                </div>
+            </div>
+
+            <!-- App 4 -->
+            <div class="app-card">
+                <div class="app-title">Raitzz Trabalho Escolar e TCC</div>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/br/app/raitzz-trabalho-escolar-e-tcc/id6443958729" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetotrabalhoacademico" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                </div>
+            </div>
+
+            <!-- App 5 -->
+            <div class="app-card">
+                <div class="app-title">Criar Orçamento em PDF Pro</div>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/br/app/criar-or%C3%A7amento-em-pdf-pro/id6450964508" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoorcamentopdf" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Fale Conosco</h3>
+            <p>Precisa de suporte? Envie um email para:</p>
+            <p><a href="mailto:felipe@reitzaplicativos.com.br">felipe@reitzaplicativos.com.br</a></p>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 REITZ APLICATIVOS LTDA. Todos os direitos reservados.</p>
+            <p>Araquari, SC - Brasil</p>
+            <p style="margin-top: 10px;"><a href="#" style="color: #888; text-decoration: none;">Política de Privacidade</a> | <a href="#" style="color: #888; text-decoration: none;">Termos de Uso</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>
