@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Variáveis de Cores */
         :root {
             --primary: #0056b3;
             --bg-color: #f8f9fa;
@@ -23,13 +22,7 @@
             --border-color: #eaeaea;
         }
 
-        /* Reset Básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
         body {
             background-color: var(--bg-color);
@@ -40,7 +33,6 @@
             min-height: 100vh;
         }
 
-        /* Cabeçalho / Hero Section */
         header {
             background-color: var(--card-bg);
             padding: 60px 20px;
@@ -65,7 +57,6 @@
             margin: 0 auto;
         }
 
-        /* Container Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -73,7 +64,6 @@
             flex: 1;
         }
 
-        /* Seção Sobre a Empresa */
         .about-section {
             background: var(--card-bg);
             padding: 40px;
@@ -83,25 +73,10 @@
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        .about-section h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
+        .about-section h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; }
+        .about-section p { color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem; }
 
-        .about-section p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Seção de Aplicativos */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--text-main);
-        }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--text-main); }
 
         .apps-grid {
             display: grid;
@@ -120,25 +95,10 @@
             border: 1px solid var(--border-color);
         }
 
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-        }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .app-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 15px; color: var(--text-main); }
 
-        .app-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-main);
-        }
-
-        .app-buttons {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding-top: 20px;
-        }
+        .app-buttons { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 20px; }
 
         .btn {
             display: inline-block;
@@ -151,27 +111,11 @@
             transition: opacity 0.2s;
         }
 
-        .btn:hover {
-            opacity: 0.85;
-        }
+        .btn:hover { opacity: 0.85; }
+        .btn-apple { background-color: var(--apple-color); color: white; }
+        .btn-google { background-color: var(--play-color); color: white; }
 
-        .btn-apple {
-            background-color: var(--apple-color);
-            color: white;
-        }
-
-        .btn-google {
-            background-color: var(--play-color);
-            color: white;
-        }
-
-        /* Rodapé Corporativo */
-        footer {
-            background-color: #1a1a1a;
-            color: #dddddd;
-            padding: 50px 20px 20px;
-            margin-top: 40px;
-        }
+        footer { background-color: #1a1a1a; color: #dddddd; padding: 50px 20px 20px; margin-top: 40px; }
 
         .footer-container {
             max-width: 1200px;
@@ -182,28 +126,10 @@
             margin-bottom: 30px;
         }
 
-        .footer-col h3 {
-            color: #ffffff;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-col p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: #aaaaaa;
-        }
-
-        .footer-col a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-col a:hover {
-            text-decoration: underline;
-            color: var(--primary);
-        }
+        .footer-col h3 { color: #ffffff; font-size: 1.2rem; margin-bottom: 15px; }
+        .footer-col p { margin-bottom: 10px; font-size: 0.95rem; color: #aaaaaa; }
+        .footer-col a { color: #ffffff; text-decoration: none; font-weight: 500; }
+        .footer-col a:hover { text-decoration: underline; color: var(--primary); }
 
         .footer-legal {
             text-align: center;
@@ -215,143 +141,34 @@
             margin: 0 auto;
         }
 
-        .footer-legal-links {
-            margin-top: 10px;
-        }
-
-        .footer-legal-links a {
-            color: #888888;
-            text-decoration: none;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-
-        .footer-legal-links a:hover {
-            color: #ffffff;
-        }
-
-        /* Estilos do Modal (Pop-up de Termos e Privacidade) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 5% auto;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
-        }
-
-        .close-btn {
-            color: #aaa;
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .modal-content h2 {
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .modal-content h3 {
-            margin: 15px 0 10px;
-            font-size: 1.1rem;
-        }
-
+        .footer-legal-links { margin-top: 10px; }
+        .footer-legal-links a { color: #888888; text-decoration: none; margin: 0 10px; }
+        .footer-legal-links a:hover { color: #ffffff; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>REITZ APLICATIVOS LTDA</h1>
-        <p>Desenvolvimento e licenciamento de soluções digitais, ferramentas de produtividade e aplicativos educacionais.</p>
+        <p>Desenvolvimento e licenciamento de soluções digitais corporativas e educacionais.</p>
     </header>
 
     <main class="container">
-        
         <section class="about-section">
             <h2>Sobre Nós</h2>
-            <p>A <strong>Reitz Aplicativos Ltda</strong> (Reitz Apps) é uma empresa brasileira de tecnologia, devidamente registrada e com sede em Araquari - SC. Atuamos com foco no desenvolvimento e licenciamento de programas de computador e soluções móveis de alto impacto.</p>
-            <p>Nossa missão é democratizar ferramentas de produtividade e facilitar o acesso à educação através da tecnologia. Desenvolvemos desde planejadores de aulas voltados para a Base Nacional Comum Curricular (BNCC) até ferramentas corporativas para geração de orçamentos e escalas de revezamento.</p>
+            <p>A <strong>Reitz Aplicativos Ltda</strong> (Reitz Apps) é uma empresa brasileira de tecnologia sediada em Araquari - SC. Focamos no desenvolvimento de ferramentas de produtividade e soluções educacionais que impactam positivamente a rotina dos nossos usuários.</p>
         </section>
 
         <h2 class="section-title">Nosso Portfólio</h2>
-        
         <div class="apps-grid">
-            
             <div class="app-card">
                 <div class="app-title">Caderno de Anotações por Matérias</div>
                 <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/caderno-anota%C3%A7%C3%B5es-por-mat%C3%A9rias/id6451050103" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetocadernodesenhado" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
+                    <a href="https://apps.apple.com/br/app/caderno-anota%C3%A7%C3%B5es-por-mat%C3%A9rias/id6451050103" class="btn btn-apple">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetocadernodesenhado" class="btn btn-google">Google Play</a>
                 </div>
             </div>
-
-            <div class="app-card">
-                <div class="app-title">Criar Escala de Revezamento</div>
-                <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/criar-escala-de-revezamento/id6451197630" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoescalarevezamento&hl=pt" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
-                </div>
             </div>
-
-            <div class="app-card">
-                <div class="app-title">Eu Escritor - Escrever Livros</div>
-                <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/eu-escritor-escrever-livros/id6743714263" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoescreverlivro&hl=pt" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
-                </div>
-            </div>
-
-            <div class="app-card">
-                <div class="app-title">Raitzz Trabalho Escolar e TCC</div>
-                <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/raitzz-trabalho-escolar-e-tcc/id6443958729" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetotrabalhoacademico" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
-                </div>
-            </div>
-
-            <div class="app-card">
-                <div class="app-title">Criar Orçamento em PDF Pro</div>
-                <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/criar-or%C3%A7amento-em-pdf-pro/id6450964508" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoorcamentopdf" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
-                </div>
-            </div>
-
-            <div class="app-card">
-                <div class="app-title">Plano de Aula BNCC</div>
-                <div class="app-buttons">
-                    <a href="https://apps.apple.com/br/app/plano-de-aula-bncc-fund-m%C3%A9d/id6450844605" target="_blank" rel="noopener noreferrer" class="btn btn-apple">Baixar na App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=reitz.apps.projetoplanodeaulafunmedio" target="_blank" rel="noopener noreferrer" class="btn btn-google">Baixar no Google Play</a>
-                </div>
-            </div>
-
-        </div>
     </main>
 
     <footer>
@@ -360,72 +177,22 @@
                 <h3>Sede Corporativa</h3>
                 <p>REITZ APLICATIVOS LTDA</p>
                 <p>CNPJ: 61.160.501/0001-20</p>
-                <p>Rua Osvaldo Will, 853 - Bairro Itinga</p>
-                <p>Araquari - SC, CEP 89.245-000, Brasil</p>
+                <p>Rua Osvaldo Will, 853 - Itinga</p>
+                <p>Araquari - SC, CEP 89.245-000</p>
             </div>
-            
             <div class="footer-col">
-                <h3>Suporte ao Cliente</h3>
-                <p>Nossa equipe de atendimento está pronta para auxiliar com dúvidas sobre os aplicativos.</p>
+                <h3>Suporte</h3>
                 <p>E-mail: <a href="mailto:felipe@reitzaplicativos.com.br">felipe@reitzaplicativos.com.br</a></p>
-                <p>Telefone Institucional: (47) 8801-4164</p>
+                <p>Telefone: (47) 8801-4164</p>
             </div>
         </div>
-
         <div class="footer-legal">
-            <p>&copy; 2026 REITZ APLICATIVOS LTDA. Todos os direitos reservados.</p>
+            <p>&copy; 2026 REITZ APLICATIVOS LTDA.</p>
             <div class="footer-legal-links">
-                <a onclick="openModal('modalPrivacidade')">Política de Privacidade</a> | 
-                <a onclick="openModal('modalTermos')">Termos de Uso</a>
+                <a href="privacidade.html">Política de Privacidade</a> | 
+                <a href="termos.html">Termos de Uso</a>
             </div>
         </div>
     </footer>
-
-    <div id="modalPrivacidade" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modalPrivacidade')">&times;</span>
-            <h2>Política de Privacidade</h2>
-            <p><strong>Última atualização: Maio de 2026</strong></p>
-            <p>A Reitz Aplicativos Ltda valoriza a privacidade dos seus usuários. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você utiliza nossos aplicativos móveis e serviços.</p>
-            <h3>1. Coleta de Informações</h3>
-            <p>Não coletamos informações de identificação pessoal automaticamente. Quaisquer dados gerados em nossos aplicativos, como anotações, PDFs ou escalas de revezamento, são armazenados localmente no seu dispositivo e/ou na sua conta pessoal de nuvem (iCloud/Google Drive).</p>
-            <h3>2. Compartilhamento de Dados</h3>
-            <p>Não vendemos, alugamos ou compartilhamos seus dados com terceiros para fins de marketing.</p>
-            <h3>3. Contato</h3>
-            <p>Para dúvidas sobre nossa política de privacidade, entre em contato através do e-mail felipe@reitzaplicativos.com.br.</p>
-        </div>
-    </div>
-
-    <div id="modalTermos" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modalTermos')">&times;</span>
-            <h2>Termos de Uso</h2>
-            <p><strong>Última atualização: Maio de 2026</strong></p>
-            <p>Ao fazer o download ou utilizar os aplicativos da Reitz Aplicativos Ltda, estes termos aplicar-se-ão automaticamente a você. Recomendamos que você os leia atentamente antes de usar os aplicativos.</p>
-            <h3>1. Uso da Licença</h3>
-            <p>É concedida permissão para baixar temporariamente uma cópia dos aplicativos da Reitz Aplicativos Ltda para visualização transitória pessoal e não comercial. Você não pode modificar ou copiar os materiais, usá-los para fins comerciais ou tentar descompilar ou fazer engenharia reversa de qualquer software.</p>
-            <h3>2. Isenção de Responsabilidade</h3>
-            <p>Os aplicativos são fornecidos "como estão". A Reitz Aplicativos Ltda não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias.</p>
-            <h3>3. Lei Aplicável</h3>
-            <p>Estes termos e condições são regidos e interpretados de acordo com as leis do Brasil, submetendo-se irrevogavelmente à jurisdição exclusiva dos tribunais da Comarca de Araquari - SC.</p>
-        </div>
-    </div>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-
-        // Fechar clicando fora da caixa do modal
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
