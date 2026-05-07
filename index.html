@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reitz Aplicativos Ltda</title>
-    <meta name="description" content="Desenvolvimento de aplicativos focados em produtividade, educação e utilitários.">
+    <title>Reitz Aplicativos Ltda - Desenvolvimento de Software</title>
+    <meta name="description" content="Desenvolvimento e licenciamento de programas de computador, focados em produtividade, educação e utilitários.">
     
-    <!-- Fonte do Google (Inter) para um visual moderno -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* Variáveis de Cores */
@@ -21,6 +20,7 @@
             --text-muted: #666666;
             --apple-color: #000000;
             --play-color: #01875f;
+            --border-color: #eaeaea;
         }
 
         /* Reset Básico */
@@ -35,6 +35,9 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Cabeçalho / Hero Section */
@@ -42,7 +45,7 @@
             background-color: var(--card-bg);
             padding: 60px 20px;
             text-align: center;
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 1px solid var(--border-color);
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
@@ -52,6 +55,7 @@
             margin-bottom: 10px;
             font-weight: 700;
             letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
         header p {
@@ -61,13 +65,37 @@
             margin: 0 auto;
         }
 
-        /* Seção de Aplicativos */
+        /* Container Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
+            flex: 1;
         }
 
+        /* Seção Sobre a Empresa */
+        .about-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .about-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Seção de Aplicativos */
         .section-title {
             text-align: center;
             font-size: 2rem;
@@ -89,7 +117,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
-            border: 1px solid #f0f0f0;
+            border: 1px solid var(--border-color);
         }
 
         .app-card:hover {
@@ -105,7 +133,7 @@
         }
 
         .app-buttons {
-            margin-top: auto; /* Empurra os botões para o fundo do card */
+            margin-top: auto;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -137,51 +165,144 @@
             color: white;
         }
 
-        /* Rodapé e Contato */
+        /* Rodapé Corporativo */
         footer {
-            background-color: #222;
-            color: #ddd;
-            text-align: center;
-            padding: 40px 20px;
+            background-color: #1a1a1a;
+            color: #dddddd;
+            padding: 50px 20px 20px;
             margin-top: 40px;
         }
 
-        .contact-info {
-            margin-bottom: 20px;
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
-        .contact-info a {
-            color: #fff;
+        .footer-col h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #aaaaaa;
+        }
+
+        .footer-col a {
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        .contact-info a:hover {
+        .footer-col a:hover {
             text-decoration: underline;
+            color: var(--primary);
         }
 
         .footer-legal {
+            text-align: center;
             font-size: 0.85rem;
-            color: #888;
-            margin-top: 20px;
-            border-top: 1px solid #444;
+            color: #666666;
+            border-top: 1px solid #333333;
             padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        .footer-legal-links {
+            margin-top: 10px;
+        }
+
+        .footer-legal-links a {
+            color: #888888;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .footer-legal-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Estilos do Modal (Pop-up de Termos e Privacidade) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .modal-content h3 {
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <h1>REITZ APLICATIVOS LTDA</h1>
-        <p>Desenvolvimento de soluções digitais, ferramentas de produtividade e aplicativos educacionais.</p>
+        <p>Desenvolvimento e licenciamento de soluções digitais, ferramentas de produtividade e aplicativos educacionais.</p>
     </header>
 
     <main class="container">
+        
+        <section class="about-section">
+            <h2>Sobre Nós</h2>
+            <p>A <strong>Reitz Aplicativos Ltda</strong> (Reitz Apps) é uma empresa brasileira de tecnologia, devidamente registrada e com sede em Araquari - SC. Atuamos com foco no desenvolvimento e licenciamento de programas de computador e soluções móveis de alto impacto.</p>
+            <p>Nossa missão é democratizar ferramentas de produtividade e facilitar o acesso à educação através da tecnologia. Desenvolvemos desde planejadores de aulas voltados para a Base Nacional Comum Curricular (BNCC) até ferramentas corporativas para geração de orçamentos e escalas de revezamento.</p>
+        </section>
+
         <h2 class="section-title">Nosso Portfólio</h2>
         
         <div class="apps-grid">
             
-            <!-- App 1 -->
             <div class="app-card">
                 <div class="app-title">Caderno de Anotações por Matérias</div>
                 <div class="app-buttons">
@@ -190,7 +311,6 @@
                 </div>
             </div>
 
-            <!-- App 2 -->
             <div class="app-card">
                 <div class="app-title">Criar Escala de Revezamento</div>
                 <div class="app-buttons">
@@ -199,7 +319,6 @@
                 </div>
             </div>
 
-            <!-- App 3 -->
             <div class="app-card">
                 <div class="app-title">Eu Escritor - Escrever Livros</div>
                 <div class="app-buttons">
@@ -208,7 +327,6 @@
                 </div>
             </div>
 
-            <!-- App 4 -->
             <div class="app-card">
                 <div class="app-title">Raitzz Trabalho Escolar e TCC</div>
                 <div class="app-buttons">
@@ -217,7 +335,6 @@
                 </div>
             </div>
 
-            <!-- App 5 -->
             <div class="app-card">
                 <div class="app-title">Criar Orçamento em PDF Pro</div>
                 <div class="app-buttons">
@@ -226,7 +343,6 @@
                 </div>
             </div>
 
-            <!-- App 6 -->
             <div class="app-card">
                 <div class="app-title">Plano de Aula BNCC</div>
                 <div class="app-buttons">
@@ -239,17 +355,77 @@
     </main>
 
     <footer>
-        <div class="contact-info">
-            <h3>Fale Conosco</h3>
-            <p>Precisa de suporte? Envie um email para:</p>
-            <p><a href="mailto:felipe@reitzaplicativos.com.br">felipe@reitzaplicativos.com.br</a></p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Sede Corporativa</h3>
+                <p>REITZ APLICATIVOS LTDA</p>
+                <p>CNPJ: 61.160.501/0001-20</p>
+                <p>Rua Osvaldo Will, 853 - Bairro Itinga</p>
+                <p>Araquari - SC, CEP 89.245-000, Brasil</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Suporte ao Cliente</h3>
+                <p>Nossa equipe de atendimento está pronta para auxiliar com dúvidas sobre os aplicativos.</p>
+                <p>E-mail: <a href="mailto:felipe@reitzaplicativos.com.br">felipe@reitzaplicativos.com.br</a></p>
+                <p>Telefone Institucional: (47) 8801-4164</p>
+            </div>
         </div>
+
         <div class="footer-legal">
             <p>&copy; 2026 REITZ APLICATIVOS LTDA. Todos os direitos reservados.</p>
-            <p>Araquari, SC - Brasil</p>
-            <p style="margin-top: 10px;"><a href="#" style="color: #888; text-decoration: none;">Política de Privacidade</a> | <a href="#" style="color: #888; text-decoration: none;">Termos de Uso</a></p>
+            <div class="footer-legal-links">
+                <a onclick="openModal('modalPrivacidade')">Política de Privacidade</a> | 
+                <a onclick="openModal('modalTermos')">Termos de Uso</a>
+            </div>
         </div>
     </footer>
 
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modalPrivacidade')">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p><strong>Última atualização: Maio de 2026</strong></p>
+            <p>A Reitz Aplicativos Ltda valoriza a privacidade dos seus usuários. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você utiliza nossos aplicativos móveis e serviços.</p>
+            <h3>1. Coleta de Informações</h3>
+            <p>Não coletamos informações de identificação pessoal automaticamente. Quaisquer dados gerados em nossos aplicativos, como anotações, PDFs ou escalas de revezamento, são armazenados localmente no seu dispositivo e/ou na sua conta pessoal de nuvem (iCloud/Google Drive).</p>
+            <h3>2. Compartilhamento de Dados</h3>
+            <p>Não vendemos, alugamos ou compartilhamos seus dados com terceiros para fins de marketing.</p>
+            <h3>3. Contato</h3>
+            <p>Para dúvidas sobre nossa política de privacidade, entre em contato através do e-mail felipe@reitzaplicativos.com.br.</p>
+        </div>
+    </div>
+
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modalTermos')">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p><strong>Última atualização: Maio de 2026</strong></p>
+            <p>Ao fazer o download ou utilizar os aplicativos da Reitz Aplicativos Ltda, estes termos aplicar-se-ão automaticamente a você. Recomendamos que você os leia atentamente antes de usar os aplicativos.</p>
+            <h3>1. Uso da Licença</h3>
+            <p>É concedida permissão para baixar temporariamente uma cópia dos aplicativos da Reitz Aplicativos Ltda para visualização transitória pessoal e não comercial. Você não pode modificar ou copiar os materiais, usá-los para fins comerciais ou tentar descompilar ou fazer engenharia reversa de qualquer software.</p>
+            <h3>2. Isenção de Responsabilidade</h3>
+            <p>Os aplicativos são fornecidos "como estão". A Reitz Aplicativos Ltda não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias.</p>
+            <h3>3. Lei Aplicável</h3>
+            <p>Estes termos e condições são regidos e interpretados de acordo com as leis do Brasil, submetendo-se irrevogavelmente à jurisdição exclusiva dos tribunais da Comarca de Araquari - SC.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Fechar clicando fora da caixa do modal
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
